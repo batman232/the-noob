@@ -1,0 +1,31 @@
+<div class="header">
+<p id="notice"><%= notice %></p>
+
+<h1 class="banana">Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="header">Title</th>
+      <th class+"banana">Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td class="header"><%= blog.title %></td>
+        <td class="banana"><%= blog.body %></td>
+        <td  class="header"><%= link_to 'Show', blog %></td>
+        <td  class="header"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td  class="header"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="banana"><%= link_to 'New Posts', new_blog_path %></div>
+</div>
